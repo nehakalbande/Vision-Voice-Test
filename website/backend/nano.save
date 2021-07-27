@@ -1,0 +1,10 @@
+router.post('/getres', async (req, res) => {
+    const query = { googleId: req.body.googleId };
+    const response = await Aural.findOne(query, {});
+    console.log(response)
+    if (response) {
+        return res.send(response);
+    } else {
+        return res.status(500).send({ error: 'no matching result' });
+    }
+});

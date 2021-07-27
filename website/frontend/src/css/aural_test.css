@@ -1,0 +1,65 @@
+button {
+    font-size: 15px;
+    /* margin-top: 20px; */
+    margin-bottom: 30px;
+    margin-left: 300px;
+    margin-right: -380px;
+    background-color: skyblue;
+    padding: 13px;
+    cursor: pointer;
+    /* left: 100px;
+  right: 70px; */
+}
+
+.instt-cont {
+    width: 70%;
+    margin: 20px auto;
+    min-height: 53vh;
+}
+
+.instt-cont * {
+    margin: 0px auto;
+}
+
+.jumbotron h4 {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.jumbotron h2 {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.jumbotron p {
+    font-size: 18px;
+}
+.btn-btn {
+    width: 200px;
+    font-size: medium;
+    margin: 10px auto;
+    text-align: center;
+    /* border: 1px black solid; */
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+@media screen and (max-width: 768px) {
+    button {
+        display: flex;
+        margin-left: 90px;
+        text-align: center;
+    }
+
+    .jumbotron p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .row {
+        flex-direction: column;
+    }
+}

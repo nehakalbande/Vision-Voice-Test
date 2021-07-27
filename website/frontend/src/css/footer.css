@@ -1,0 +1,57 @@
+.coll {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 50px;
+    margin-right: 200px;
+}
+
+center {
+    display: block;
+}
+
+.coll p {
+    color: #f1ede9;
+    font-size: 23px;
+}
+.coll h2 {
+    color: #8ab9f7;
+    font-size: 30px;
+}
+
+.roww {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.follow-icon {
+    padding: 8px;
+    color: white;
+    font-size: 25px;
+}
+
+.coll a {
+    text-align: center;
+}
+
+.linkk {
+    color: white;
+}
+
+.imgg {
+    width: 200px;
+    height: 200px;
+}
+
+@media screen and (max-width: 500px) {
+    .coll {
+        max-width: 100%;
+    }
+    .roww {
+        flex-direction: column;
+    }
+    .circle {
+        margin-top: 67px;
+        margin-right: 1px;
+        margin-left: 300px;
+    }
+}

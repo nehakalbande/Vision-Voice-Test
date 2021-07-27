@@ -1,0 +1,61 @@
+.cont-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.follow-icon {
+  padding: 8px;
+  color: white;
+  font-size: 25px;
+}
+.foot-img-div {
+  margin: 0 auto;
+}
+.links-div {
+  margin: 50px;
+}
+.linkk {
+  color: white;
+}
+
+.imgg {
+  width: 200px;
+  height: 200px;
+}
+.f-ul {
+  list-style-type: none;
+}
+.re-link {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.re-link:hover {
+  text-decoration: underline;
+}
+
+.f-ul li {
+  margin: 10px auto;
+}
+
+.copy-cont {
+  color: white;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .cont-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .copy-cont p {
+    text-align: justify;
+  }
+}

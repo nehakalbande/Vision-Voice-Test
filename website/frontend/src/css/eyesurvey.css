@@ -1,0 +1,6 @@
+.Survey-container {
+    margin: 0;
+    background-color: #f6f6f6;
+    padding-bottom: 40px;
+    overflow: auto;
+}

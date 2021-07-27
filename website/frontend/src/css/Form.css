@@ -1,0 +1,35 @@
+.outer-div {
+    width: 100%;
+    background-color: #f6f6f6;
+    overflow: auto;
+}
+.inner-div {
+    width: 650px;
+    margin: 0 auto;
+}
+.ques-div {
+    margin: 20px auto;
+    background-color: white;
+    padding: 5px;
+}
+.qlabel {
+    margin: 5px;
+    border-radius: 2px;
+}
+.ques-option {
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+@media screen and (max-width: 700px) {
+    .inner-div {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .ques-option {
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+}

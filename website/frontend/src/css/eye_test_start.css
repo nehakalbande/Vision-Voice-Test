@@ -1,0 +1,45 @@
+.eye-cont {
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+}
+.eye-cont * {
+  padding: 5px;
+}
+.eye-img-cont {
+  width: 700px;
+  margin: 20px auto;
+  padding: 10px;
+}
+.snellen-img {
+  height: 100%;
+  width: 100%;
+}
+
+.inp-div {
+  margin: 5px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-f {
+  font-size: auto;
+  height: 20px;
+  width: 200px;
+}
+
+#submit-btn {
+  margin: 10px;
+  padding: 0;
+  width: 100px;
+  background-color: #a7b2c2;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .eye-img-cont {
+    width: 90%;
+  }
+}

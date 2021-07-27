@@ -1,0 +1,49 @@
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.auralll {
+  margin-top: 55px;
+  margin-left: 250px;
+  margin-bottom: 30px;
+}
+
+.quesques {
+  font-size: 20px;
+}
+
+.audioo {
+  margin-left: 20px;
+}
+
+.icon-icon1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .auralll {
+    margin: 20px;
+  }
+  .icon-icon1 {
+    font-size: 25px;
+    margin-left: 3px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 508px) {
+  .auralll {
+    margin: 20px;
+    width:100%;
+    justify-content:center;
+  }
+  .icon-icon1 {
+    font-size: 25px;
+    margin-left: 1px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+  }
+}

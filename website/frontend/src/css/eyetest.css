@@ -1,0 +1,23 @@
+.inst-cont {
+    width: 70%;
+    margin: 20px auto;
+    min-height: 53vh;
+}
+
+.red-link {
+    text-decoration: none;
+    color: black;
+}
+
+.inst-cont * {
+    margin: 7px;
+}
+
+.start-btn {
+    width: 130px;
+    background-color: #8ab9f7;
+    padding: 2px;
+    /* border: 1px black solid; */
+    margin: 0 auto;
+    text-align: center;
+}

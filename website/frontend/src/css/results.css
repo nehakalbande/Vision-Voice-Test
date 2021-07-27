@@ -1,0 +1,29 @@
+.out-res {
+    min-height: 51vh;
+    text-align: center;
+    padding: 10px;
+}
+.in-res {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.res-link {
+    color: Black;
+    text-decoration: none;
+    font-size: large;
+}
+.abn {
+    width: 150px;
+    padding: 8px;
+    margin: 50px auto;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+@media screen and (max-width: 500px) {
+    .out-res {
+        min-height: 53vh;
+    }
+}

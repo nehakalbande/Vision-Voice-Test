@@ -1,0 +1,32 @@
+.nav-container {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.24);
+}
+.main-nav {
+    height: 100px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    width: 118px;
+    height: 80%;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.logo-img {
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        width: 100%;
+    }
+}

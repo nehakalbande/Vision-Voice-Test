@@ -1,0 +1,83 @@
+.cardd-container {
+    margin: 80px auto;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.true {
+    display: flex;
+    flex-direction: row;
+}
+.false {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.img-container {
+    height: 400px;
+    width: 400px;
+}
+
+.img-container img {
+    height: 100%;
+    width: 100%;
+}
+
+.info-cont {
+    margin-top: 70px;
+    width: 500px;
+}
+.redirect-btn-div {
+    margin: 20px auto;
+    text-align: center;
+}
+.redirect-btn {
+    font-size: large;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    background: #8ab9f7;
+    -webkit-transition: background 1s; /* For Safari 3.0 to 6.0 */
+    transition: background 1s;
+}
+.redirect-btn:hover {
+    background: #19cbf8;
+}
+
+@media screen and (max-width: 768px) {
+    .cardd-container {
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .cardd-container * {
+        margin: 40px auto;
+    }
+    .info-cont {
+        width: 300px;
+    }
+
+    .img-container {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 508px) {
+    .cardd-container {
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .cardd-container * {
+        margin: 40px auto;
+    }
+    .info-cont {
+        width: 300px;
+    }
+
+    .img-container {
+        height: 300px;
+        width: 300px;
+    }
+}
