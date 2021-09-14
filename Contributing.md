@@ -18,12 +18,26 @@ If you have something awesome to contribute, this is how you do it.
   - `git clone https://github.com/{Github-UserName}/Vision-Voice-Test.git`
 - Change the directory
   - `cd Vision-Voice-Test/website/`
+  
+  ### Work in frontend:
+  - `cd frontend`
 - Install the Project Dependencies
   - `npm install`
 - Run React Server
   - `npm start`
 - Local Host
   - `http://localhost:3000/`
+
+  ### Work in backend:
+  - `cd backend`
+- Install the Project Dependencies
+  - `npm install`
+- Run Node Server
+  - `npm run server`
+- Local Host
+  - `http://localhost:5000/`
+
+
 
 ## Make all the changes based on the issue
 ## Commit message
