@@ -91,8 +91,6 @@ Once you visited our website, you can go through other websites for free checkup
 
 We welcome contributions to Vision and Voice!
 
-![GitHub Repo stars](https://img.shields.io/github/stars/nehakalbande/Vision-Voice-Test?color=2E61C5&logo=Github&style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/nehakalbande/Vision-Voice-Test?color=2E61C5&logo=Github&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/nehakalbande/Vision-Voice-Test?color=2E61C5&logo=Github&style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/nehakalbande/Vision-Voice-Test?logo=Github&style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/nehakalbande/Vision-Voice-Test?logo=Github&style=for-the-badge)
