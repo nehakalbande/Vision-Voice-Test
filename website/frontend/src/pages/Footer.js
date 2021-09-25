@@ -16,25 +16,22 @@ const Footer = () => {
                                 <h2> Links:</h2>
                                 <ul>
                                     <li>
-                                        <a
-                                            href='/eyetest'
-                                            style={{ color: "white" }}
-                                        >
+                                        <a target={"_blank"} href='/eyetest' style={{ color: "white" }}>
                                             Vision Test
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='' style={{ color: "white" }}>
+                                        <a target={"_blank"} href='' style={{ color: "white" }}>
                                             Aural Test
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='' style={{ color: "white" }}>
+                                        <a target={"_blank"} href='' style={{ color: "white" }}>
                                             How To Use
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='' style={{ color: "white" }}>
+                                        <a target={"_blank"} href='' style={{ color: "white" }}>
                                             GetDocument
                                         </a>
                                     </li>

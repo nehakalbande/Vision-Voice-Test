@@ -8,7 +8,7 @@ const Navbar = (props) => {
         <div className='nav-container'>
             <div className='main-nav'>
                 <div className='logo'>
-                    <a href='/'>
+                    <a target={"_blank"} href='/'>
                         <img src={logo} alt='Blaze' className='logo-img' />
                     </a>
                 </div>
