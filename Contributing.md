@@ -33,7 +33,7 @@ If you have something awesome to contribute, this is how you do it.
 - Install the Project Dependencies
   - `npm install`
 - Run Node Server
-  - `npm run server`
+  - `npm app.js`
 - Local Host
   - `http://localhost:5000/`
 
@@ -56,7 +56,7 @@ Please follow the below format while writing commit messages
 For an overview of the project - https://github.com/nehakalbande/Vision-Voice-Test/projects
 While contributing to the website, the contributors are expected to follow the below mentioned guidelines:
 
-1. Please follow the file structure recommended in the official [Reactjs documentation](https://reactjs.org/docs/faq-structure.html).
+1. Please follow the file structure recommended in the official [Reactjs documentation](https://reactjs.org/docs/faq-structure.html) [Nodejs documentation](https://nodejs.org/en/docs/).
 2. Try to create separate Javascript files for each React component that you add to the website. 
 3. Please make sure you include comments in your code wherever necessary. 
 4. **Include only one commit in each of your pull requests.**
