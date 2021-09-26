@@ -1,10 +1,20 @@
 .nav-container {
-    height: 100px;
+    height: 75px;
     width: 100%;
     background-color: black;
     -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.11);
     -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.11);
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.24);
+}
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    margin-top: 19px;
+}
+.logo-text{
+    color: rgb(138, 185, 247);
+    margin-top: 4px;
+    font-size: 35px;
+    margin-left: -44px;
 }
 .main-nav {
     height: 100px;
@@ -17,7 +27,7 @@
 .logo {
     width: 118px;
     height: 80%;
-    margin: 10px;
+    margin: 0px;
     margin-left: 20px;
 }
 
