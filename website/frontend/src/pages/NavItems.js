@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import "../css/NavItems.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import firebase from "../config/firebase-config";
+import google from "../config/auth-method";
 
 class NavItems extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
+      auth: false
     };
   }
-
+  
   render() {
-    const { open } = this.state;
-    const { authenticated } = this.props;
+    const { open } = this.state.open;
     return (
       <>
         <FontAwesomeIcon
@@ -39,14 +41,15 @@ class NavItems extends React.Component {
               </a>
             </li>
             <li className="navlist-li">
-              {authenticated ? (
+              
+              {this.state.auth?(
                 <button
                   className="navlist-item btn"
-                  onClick={this._handleLogutClick}
+                  onClick={this._handleLogoutClick}
                 >
                   Logout
                 </button>
-              ) : (
+              ):(
                 <button
                   className="navlist-item btn"
                   onClick={this._handleSignInClick}
@@ -54,6 +57,7 @@ class NavItems extends React.Component {
                   Login
                 </button>
               )}
+              
             </li>
           </ul>
         </div>
@@ -62,11 +66,22 @@ class NavItems extends React.Component {
   }
 
   _handleSignInClick = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    firebase.auth().signInWithPopup(google).then((result)=>{
+      const token = result.credential.accessToken;
+      const user = result.user;
+      this.setState({auth: true})
+      console.log(this.state.auth);
+    }).catch((err)=>{
+      console.log(err);
+    })
   };
   _handleLogoutClick = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
-    this.props._handleNotAuthenticated();
+    firebase.auth().signOut().then(()=>{
+      this.setState({auth: false});
+      console.log("Logged out!")
+    }).catch((err)=>{
+      console.log(err);
+    })
   };
 }
 
