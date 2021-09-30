@@ -80,9 +80,11 @@
 }
 
 .cardd1 .card-info1 p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   letter-spacing: 1px;
   font-size: 15px;
-  margin-top: 4px;
+  margin-top: 6px;
   margin-bottom: 7px;
   padding-left: 4px;
 }
