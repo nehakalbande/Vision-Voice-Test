@@ -19,7 +19,7 @@ const Navbar = (props) => {
                     <span>Vision Voice</span>
                 </div>
                 </div>
-                <NavItems authenticated={props.authenticated} handleNotAuthenticated={props._handleNotAuthenticated} />
+                <NavItems authenticated={props.authenticated} handleNotAuthenticated={props._handleNotAuthenticated} username={props.username}/>
             </div>
         </div>
     );
