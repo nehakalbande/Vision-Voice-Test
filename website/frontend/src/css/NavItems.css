@@ -78,3 +78,25 @@
         margin: 0 auto;
     }
 }
+.dropdown {
+    position: absolute;
+    top: 58px;
+    width: 100px;
+    transform: translateX(-45%);
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow: hidden;
+}
+.menu-items {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: 500ms background;
+    padding: 0.5rem;
+}
+.menu-items:hover{
+    background-color: #525357;
+}

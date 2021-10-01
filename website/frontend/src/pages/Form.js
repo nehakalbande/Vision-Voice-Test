@@ -134,7 +134,7 @@ const Form = () => {
                     </form>
                 </div>
             </div>
-            <div className='start-btn-div'>
+            <div className='start-btn-div1'>
                 <Link to='/eyetest/vision-test-start' className='red-link'>
                     <div className='start-btn'>Next Test</div>
                 </Link>
