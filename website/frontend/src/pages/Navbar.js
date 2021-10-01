@@ -10,7 +10,7 @@ const Navbar = (props) => {
                 <div className="row">
                 <div class="col-sm-3">
                 <div className='logo'>
-                    <a href='/'>
+                    <a target={"_blank"} href='/'>
                         <img src={logo} alt='Blaze' className='logo-img' />
                     </a>
                 </div>

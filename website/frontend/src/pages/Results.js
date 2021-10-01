@@ -10,12 +10,12 @@ const Results = () => {
             <h2>Get Your Results</h2>
             <div className='in-res'>
                 <div className='redirect-btn abn'>
-                    <a href='vision-test/pdf' className='res-link'>
+                    <a target={"_blank"} href='vision-test/pdf' className='res-link'>
                         Vision Test Result
                     </a>
                 </div>
                 <div className='redirect-btn abn'>
-                    <a href='aural-test/pdf' className='res-link'>
+                    <a target={"_blank"} href='aural-test/pdf' className='res-link'>
                         Aural Test Result
                     </a>
                 </div>

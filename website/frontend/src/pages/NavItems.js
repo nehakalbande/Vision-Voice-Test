@@ -24,17 +24,17 @@ class NavItems extends React.Component {
         <div className="nav-items">
           <ul className={open ? "navlist active" : "navlist mob"}>
             <li className="navlist-li">
-              <a href="/eyetest" className="navlist-item">
+              <a target={"_blank"} href="/eyetest" className="navlist-item">
                 VisionTest
               </a>
             </li>
             <li className="navlist-li">
-              <a href="/auraltest" className="navlist-item">
+              <a target={"_blank"} href="/auraltest" className="navlist-item">
                 Aural Test
               </a>
             </li>
             <li className="navlist-li ">
-              <a href="/results" className="navlist-item disabled">
+              <a target={"_blank"} href="/results" className="navlist-item disabled">
                 Get Results
               </a>
             </li>
