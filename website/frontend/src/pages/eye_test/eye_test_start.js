@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../css/eye_test_start.css";
 import Snellen from "../../assets/Snellen.png";
-
+import { useHistory } from "react-router-dom";
 const EyeTestStart = () => {
+    const history=useHistory();
     useEffect(() => {
         document.title = "Vision Test ";
     });
@@ -63,6 +64,7 @@ const EyeTestStart = () => {
                     id='submit-btn'
                     value='Submit'
                     style={{ margin: "20px auto", padding: "8px" }}
+                    onClick={()=>history.push("/results")}
                 />
             </div>
         </div>
