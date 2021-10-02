@@ -26,14 +26,14 @@ const ScrollToTop = () => {
   return (
     <div className="goTop">
       <div
-        className={!visible ? "circle inact" : "circle"}
-        style={{ color: "#8AB9F7" }}
-      >
-        <FontAwesomeIcon
-          icon={faArrowUp}
-          className="followw-iconn"
-          alt="go Top"
-          onClick={scrollTop}
+         className={!visible ? "rectangle inact" : "rectangle"}
+         style={{ color: "#8AB9F7" }}
+       >
+         <FontAwesomeIcon
+           icon={faArrowUp}
+           className="followw-iconn"
+           alt="go Top"
+           onClick={scrollTop}
         />
       </div>
     </div>
