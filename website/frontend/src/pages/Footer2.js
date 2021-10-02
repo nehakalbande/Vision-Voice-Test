@@ -22,7 +22,7 @@ const Footer = () => {
               {links.map((l, i) => {
                 return (
                   <li>
-                    <a href={l.href} className="re-link">
+                    <a target={"_blank"} href={l.href} className="re-link">
                       {l.name}
                     </a>
                   </li>

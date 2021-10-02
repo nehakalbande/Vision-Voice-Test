@@ -2,7 +2,7 @@ import React, { Component, useEffect } from "react";
 import "../../css/auarl_test_start.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
-
+import { useHistory } from "react-router-dom";
 const Players = [
     {
         ques: "Do you find it difficult to hear people from another room ?",
@@ -50,6 +50,7 @@ const Players = [
 ];
 
 const AuralTestStart = () => {
+    const history=useHistory();
     useEffect(() => {
         document.title = "Aural Test ";
     });
@@ -81,6 +82,7 @@ const AuralTestStart = () => {
                 id='submit-btn'
                 value='Submit'
                 style={{ margin: "20px 440px", padding: "8px" }}
+                onClick={()=>history.push("/results")}
             />
         </div>
     );

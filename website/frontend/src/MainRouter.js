@@ -13,14 +13,26 @@ import ScrollToTop from "./pages/ScrollToTop";
 import EyeSurvey from "./pages/eye_test/eyeSurvey";
 import Results from "./pages/Results";
 import LoginReq from "./pages/LoginReq";
-
+import firebase from "@firebase/app-compat";
 class MainRouter extends React.Component {
   state = {
     user: {},
     error: null,
     authenticated: false,
+    username: ''
   };
   componentDidMount() {
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        this.setState({authenticated: true})
+        this.setState({username: firebase.auth().currentUser.displayName})
+      }
+      else{
+        this.setState({authenticated: false})
+        this.setState({username: ''})
+      }
+    })
+
     fetch("http://localhost:5000", {
       method: "GET",
       credentials: "include",
@@ -54,6 +66,7 @@ class MainRouter extends React.Component {
         <Navbar
           authenticated={this.state.authenticated}
           handleNotAuthenticated={this._handleNotAuthenticated}
+          username={this.state.username}
         />
         <Switch>
           <Route exact path="/" component={Home} />

@@ -7,12 +7,19 @@ const Navbar = (props) => {
     return (
         <div className='nav-container'>
             <div className='main-nav'>
+                <div className="row">
+                <div class="col-sm-3">
                 <div className='logo'>
-                    <a href='/'>
+                    <a target={"_blank"} href='/'>
                         <img src={logo} alt='Blaze' className='logo-img' />
                     </a>
                 </div>
-                <NavItems authenticated={props.authenticated} handleNotAuthenticated={props._handleNotAuthenticated} />
+                </div>
+                <div className="col-sm-3 logo-text">
+                    <span>Vision Voice</span>
+                </div>
+                </div>
+                <NavItems authenticated={props.authenticated} handleNotAuthenticated={props._handleNotAuthenticated} username={props.username}/>
             </div>
         </div>
     );
