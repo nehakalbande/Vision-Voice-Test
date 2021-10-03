@@ -6,6 +6,7 @@ const links = [
   { href: "/eyetest", name: "Vision Test" },
   { href: "/", name: "Aural Test" },
   { href: "/results", name: "Get Results" },
+  { href: "/contact", name: "Contact us" },
 ];
 
 const Footer = () => {
