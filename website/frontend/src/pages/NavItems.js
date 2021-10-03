@@ -49,6 +49,11 @@ class NavItems extends React.Component {
                 Get Results
               </a>
             </li>
+            <li className="navlist-li ">
+              <a target={"_blank"} href="/contact" className="navlist-item">
+                Contact Us
+              </a>
+            </li>
             <li className="navlist-li">
               {authenticated ? (
                 <div>

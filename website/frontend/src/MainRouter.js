@@ -5,6 +5,7 @@ import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer2";
 import Home from "./pages/Home";
 import EyeTest from "./pages/eye_test/Eye_test";
+import Contact from "./pages/Contact/Contact";
 import EyeTestStart from "./pages/eye_test/eye_test_start";
 import AuralTest from "./pages/aural_test/aural_test";
 import AuralSurvey from "./pages/aural_test/auralSurvey";
@@ -74,6 +75,7 @@ class MainRouter extends React.Component {
           <Route exact path="/eyetest" component={EyeTest} />
           <Route exact path="/auraltest" component={AuralTest} />
           <Route exact path="/results" component={Results} />
+          <Route exact path="/Contact" component={Contact} />
           <Route exact path="/auraltest/aural-survey" component={AuralSurvey} />
           <Route
             exact
