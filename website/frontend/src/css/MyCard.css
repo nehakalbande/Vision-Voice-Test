@@ -15,20 +15,45 @@
 .img-container {
     height: 400px;
     width: 400px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
 }
+
+@keyframes cf3FadeInOut {
+    0% {
+        transform: perspective(500px) translateZ(50px);
+    }
+  }
 
 .img-container img {
     height: 100%;
     width: 100%;
+    animation-name: cf3FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
 }
 
 .info-cont {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     line-height: 1.4;
-    margin-top: 70px;
     width: 500px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
 }
+
+.info-cont p {
+    padding: 10%;
+}
+
+.info-cont:hover {
+    transform: translateY(-20px);
+    background: linear-gradient(to bottom, #e9e9e9, #8ab9f7);
+    transition: 0.5s all;
+}
+
 .redirect-btn-div {
     margin: 20px auto;
     text-align: center;
