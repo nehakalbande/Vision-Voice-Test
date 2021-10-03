@@ -31,11 +31,12 @@
 }
 
 #submit-btn {
-  margin: 10px;
-  padding: 0;
-  width: 100px;
-  background-color: #a7b2c2;
+  margin: 0px auto;
+  padding: 8px;
+  width: 120px;
+  background-color: #8ab9f7 ;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
