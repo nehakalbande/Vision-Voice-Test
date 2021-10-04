@@ -12,7 +12,7 @@ const Footer = () => {
                             <div className='coll'>
                                 <img src={logo} alt='' className='imgg' />
                             </div>
-                            <div className='coll'>
+                            <div className='coll' >
                                 <h2> Links:</h2>
                                 <ul>
                                     <li>
