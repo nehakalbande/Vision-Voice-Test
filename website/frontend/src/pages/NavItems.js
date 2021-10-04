@@ -57,8 +57,8 @@ class NavItems extends React.Component {
             <li className="navlist-li">
               {authenticated ? (
                 <div>
-                <a href="#" onClick={this._handleDropdown}>
-                <div className="navlist-item">
+                <a href="#" className="navlist-item-link" onClick={this._handleDropdown}>
+                <div className="navlist-item-user">
                   Hi {username} 
                 </div>
                 </a>
