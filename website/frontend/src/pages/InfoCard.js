@@ -18,9 +18,9 @@ const InfoCard = () => {
 
         <div className="roww">
           <div className="columnn">
-            <div class="wrapper1">
+            <div className="wrapper1">
               <div className="cardd1">
-                <div class="card-info1">
+                <div className="card-info1">
                   <FontAwesomeIcon
                     icon={faAngleDoubleUp}
                     className="icon-icon"
