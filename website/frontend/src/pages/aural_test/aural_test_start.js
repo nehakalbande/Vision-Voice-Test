@@ -13,36 +13,42 @@ const Players = [
     src: "https://www.bayaudio.com.au/wp-content/themes/bayaudio-2016/hearing-test/audios/step-5.mp3",
     op1: "YES",
     op2: "NO",
+    id:1
   },
   {
     ques: "Do you find it tricky to follow conversation in presence of background noise like in restaurant or in streets ?",
     src: "https://www.bayaudio.com.au/wp-content/themes/bayaudio-2016/hearing-test/audios/step-3.mp3",
     op1: "YES",
     op2: "NO",
+    id:2
   },
   {
     ques: "Do people complain that you have the TV or radio too loud ?",
     src: "https://www.bayaudio.com.au/wp-content/themes/bayaudio-2016/hearing-test/audios/step-4.mp3",
     op1: "YES",
     op2: "NO",
+    id:3
   },
   {
     ques: "Are you able to hear this mild tone ?",
     src: "https://www.mediacollege.com/audio/tone/files/100Hz_44100Hz_16bit_05sec.mp3",
     op1: "YES",
     op2: "NO",
+    id:4
   },
   {
     ques: "Was this tone clearly audible to you ?",
     src: "https://www.mediacollege.com/audio/tone/files/440Hz_44100Hz_16bit_05sec.mp3",
     op1: "YES",
     op2: "NO",
+    id:5
   },
   {
     ques: "Was that too harsh for you or normal tone ?",
     src: "https://www.mediacollege.com/audio/tone/files/10kHz_44100Hz_16bit_05sec.mp3",
     op1: "YES",
     op2: "NO",
+    id:6
   },
 ];
 
@@ -91,7 +97,7 @@ const AuralTestStart = () => {
         Lets Start the Test!!
       </h3>
       {Players.map((a, i) => (
-        <div className="auralll">
+        <div className="auralll" key={a.id}>
           <figure>
             <FontAwesomeIcon icon={faMusic} className="icon-icon1" />
             <audio controls src={a.src} className="audioo"></audio>

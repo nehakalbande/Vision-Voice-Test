@@ -56,7 +56,7 @@ const NavItems=()=>{
               </Link>
             </li>
             <li className="navlist-li ">
-              <a target={"_blank"} href="/contact" className="navlist-item">
+              <a href="/contact" target={"_blank"} className="navlist-item">
                 Contact Us
               </a>
             </li>
