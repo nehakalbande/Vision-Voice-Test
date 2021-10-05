@@ -10,7 +10,11 @@ const reducer = (state, action) => {
       userName: "",
       email: "",
       profileImg: "",
-      isDropDownOpen:false
+      isDropDownOpen:false,
+      previousVisionTestResults:[],
+      previousAuralTestResults:[],
+      auralTestResult:{},
+      visionTestResult:{}
     };
   }
   if (action.type === "SELECT_OPTION_IN_AURAL_TEST") {
@@ -24,6 +28,13 @@ const reducer = (state, action) => {
     const modifiedVisionTest=state.visionTestResult;
     modifiedVisionTest[question]=ans;
     return {...state,visionTestResult:{...modifiedVisionTest}}
+  }
+  if (action.type === "SET_PREVIOUS_TESTS_DATA") {
+    const {auralTestResults,visionTestResults}=action.payload;
+    return {...state,previousAuralTestResults:auralTestResults,previousVisionTestResults:visionTestResults};
+  }
+  if (action.type === "CLEAR_CURRENT_TESTS_DATA") {
+    return {...state,auralTestResult:{},visionTestResult:{}};
   }
   
   return state;

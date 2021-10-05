@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Form.css";
 import { useGlobalContext } from "../reducer/context";
@@ -12,6 +12,7 @@ const eyeQ = [
       "I've never had an eyesight test",
     ],
     name: "q1",
+    id:1
   },
   {
     ques: "How often should you have your eysight tested?",
@@ -22,36 +23,43 @@ const eyeQ = [
       " Only if I notice any problem in my eyes",
     ],
     name: "q2",
+    id:2
   },
   {
     ques: "Are you diabetic?",
     options: ["yes", "no"],
     name: "q3",
+    id:3
   },
   {
     ques: "Are you registered as visually impaired?",
     options: ["yes", "no"],
     name: "q4",
+    id:4
   },
   {
     ques: "Are you able to distinguish with each eye?",
     options: ["yes", "no"],
     name: "q5",
+    id:5
   },
   {
     ques: "Can you readily distinguish the pigmentary colours, red and green?",
     options: ["yes", "no"],
     name: "q6",
+    id:6
   },
   {
     ques: "Do you suffer from night blindness?",
     options: ["yes", "no"],
     name: "q7",
+    id:7
   },
   {
     ques: "Your gender",
     options: ["Male", "Female", " other"],
     name: "q8",
+    id:8
   },
   {
     ques: "Your age group",
@@ -63,6 +71,7 @@ const eyeQ = [
       " 70 or over",
     ],
     name: "q9",
+    id:9
   },
 ];
 
@@ -75,7 +84,7 @@ const Form = () => {
           <form>
             {eyeQ.map((e, i) => {
               return (
-                <div className="ques-div">
+                <div className="ques-div" key={e.id}>
                   <div className="ques">
                     <sup
                       style={{

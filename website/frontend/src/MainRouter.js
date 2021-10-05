@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import Navbar from "./pages/Navbar";
 // import Footer from "./pages/Footer";
 import Footer from "./pages/Footer2";
@@ -15,9 +15,12 @@ import Results from "./pages/Results";
 import LoginReq from "./pages/LoginReq";
 import firebase from "@firebase/app-compat";
 import { useGlobalContext } from "./reducer/context";
+import { doc,onSnapshot } from "firebase/firestore";
+import { database } from "./config/firebase-config";
 
 const MainRouter = () => {
-  const { dispatch } = useGlobalContext();
+  const { dispatch,email } = useGlobalContext();
+
   useEffect(() => {
     const unSubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -29,37 +32,52 @@ const MainRouter = () => {
       }
     });
     return () => unSubscribe();
-  }, []);
+  }, [dispatch]);
+
+
+  useEffect(() => {
+    if (email) {
+      const unsubscribe = onSnapshot(doc(database, "users", email), (doc) => {
+        if(!doc.data())return;
+        const { auralTestResults, visionTestResults } = doc?.data();
+        dispatch({
+          type: "SET_PREVIOUS_TESTS_DATA",
+          payload: { auralTestResults, visionTestResults },
+        });
+      });
+      return () => unsubscribe();
+    }
+  }, [email,dispatch]);
 
   return (
     <div className="inner-root">
       <Navbar />
-     
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/loginreq" component={LoginReq} />
-          <Route exact path="/eyetest" component={EyeTest} />
-          <Route exact path="/auraltest" component={AuralTest} />
-          <Route exact path="/results" component={Results} />
-          <Route exact path="/auraltest/aural-survey" component={AuralSurvey} />
-          <Route
-            exact
-            path="/auraltest/aural_test_start"
-            component={AuralTestStart}
-          />
-          <Route
-            exact
-            path="/eyetest/vision-test-start"
-            component={EyeTestStart}
-          />
-          <Route exact path="/eyetest/vision-survey" component={EyeSurvey} />
-          <Route
-            exact
-            path="/auraltest/aural_test_start"
-            component={AuralTestStart}
-          />
-        </Switch>
-      
+
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/loginreq" component={LoginReq} />
+        <Route exact path="/eyetest" component={EyeTest} />
+        <Route exact path="/auraltest" component={AuralTest} />
+        <Route exact path="/results" component={Results} />
+        <Route exact path="/auraltest/aural-survey" component={AuralSurvey} />
+        <Route
+          exact
+          path="/auraltest/aural_test_start"
+          component={AuralTestStart}
+        />
+        <Route
+          exact
+          path="/eyetest/vision-test-start"
+          component={EyeTestStart}
+        />
+        <Route exact path="/eyetest/vision-survey" component={EyeSurvey} />
+        <Route
+          exact
+          path="/auraltest/aural_test_start"
+          component={AuralTestStart}
+        />
+      </Switch>
+
       <ScrollToTop />
       <Footer />
     </div>

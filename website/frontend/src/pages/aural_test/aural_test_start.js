@@ -52,7 +52,7 @@ const AuralTestStart = () => {
   useEffect(() => {
     document.title = "Aural Test ";
   });
-  const { email,dispatch,auralTestResult,visionTestResult } = useGlobalContext();
+  const { email,dispatch,auralTestResult} = useGlobalContext();
   const uploadAuralTestResult = async (e) => {
     e.preventDefault();
     if (!email) {
@@ -63,7 +63,7 @@ const AuralTestStart = () => {
       const prevInstance = doc(database, "users", email);
       const docSnap = await getDoc(prevInstance);
       const Result=[{q:"Do people complain that you have the TV or radio too loud ?",a:auralTestResult["Do people complain that you have the TV or radio too loud ?"]},{q:"Was this tone clearly audible to you ?",a:auralTestResult["Was this tone clearly audible to you ?"]}];
-      const newAuralTestResult={Result,Gender:auralTestResult["Your gender"]||"Unknown",createdAt:new Date()};
+      const newAuralTestResult={Result,Gender:auralTestResult["Your gender"]||"Unknown",createdAt:new Date().toString()};
       if (docSnap.exists()) {
         const {auralTestResults : prevAuralTestResults}=docSnap.data();
         await updateDoc(prevInstance, {
@@ -78,7 +78,8 @@ const AuralTestStart = () => {
           visionTestResults:[]
         });
       }
-       history.push("/results");
+      dispatch({type:"CLEAR_CURRENT_TESTS_DATA"});
+      history.push("/results");
     } catch (error) {
       console.log(error);
       alert("some error occured");

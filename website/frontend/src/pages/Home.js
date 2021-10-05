@@ -4,11 +4,15 @@ import src from "../assets/eye-checkup.png";
 import src1 from "../assets/ear.png";
 import InfoCard from "./InfoCard";
 
+
 const Home = () => {
+    
     useEffect(() => {
         document.title = "Vision Voice ";
-    });
-
+    },[]);
+    
+   
+    
     return (
         <div className='main-home-div'>
             <div className='why-div'>
