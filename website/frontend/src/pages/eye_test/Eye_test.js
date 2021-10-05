@@ -6,6 +6,7 @@ class EyeTest extends React.Component {
   render() {
     return (
       <div className="inst-cont">
+        
         <h2 style={{ textAlign: "center" }}>Instructions</h2>
         <h4 style={{ textAlign: "center" }}>
           We will be taking the test in 3 parts:

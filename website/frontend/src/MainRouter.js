@@ -5,6 +5,7 @@ import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer2";
 import Home from "./pages/Home";
 import EyeTest from "./pages/eye_test/Eye_test";
+import Contact from "./pages/Contact/Contact";
 import EyeTestStart from "./pages/eye_test/eye_test_start";
 import AuralTest from "./pages/aural_test/aural_test";
 import AuralSurvey from "./pages/aural_test/auralSurvey";

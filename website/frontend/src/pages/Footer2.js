@@ -30,6 +30,12 @@ const Footer = () => {
               })}
             </ul>
           </div>
+          <div className = "links-div">
+            <h2 style={{ color: "#8AB9F7" }}>About</h2>
+            <div className = "re-link">
+              This repository is a Eye And Hearing Test Website which helps people to test their vision and hearing abilities on our website
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -37,3 +43,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
