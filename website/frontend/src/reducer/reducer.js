@@ -17,6 +17,9 @@ const reducer = (state, action) => {
       visionTestResult:{}
     };
   }
+  if(action.type==="Toggle_DropDown"){
+    return { ...state,isDropDownOpen:!state.isDropDownOpen};
+  }
   if (action.type === "SELECT_OPTION_IN_AURAL_TEST") {
     const {question,ans}=action.payload;
     const modifiedAuralTest=state.auralTestResult;

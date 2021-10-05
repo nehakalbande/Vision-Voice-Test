@@ -1,17 +1,18 @@
 import React from "react";
 import "../css/footer2.css";
 import logo from "../assets/blaze.png";
-import { Link } from "react-router-dom";
+
 const links = [
-  { href: "/eyetest", name: "Vision Test",id:1 },
-  { href: "/", name: "Aural Test",id:2 },
-  { href: "/results", name: "Get Results",id:3 },
+  { href: "/eyetest", name: "Vision Test" },
+  { href: "/", name: "Aural Test" },
+  { href: "/results", name: "Get Results" },
+  { href: "/contact", name: "Contact us" },
 ];
 
 const Footer = () => {
   return (
     <footer>
-      <div fluid="true" style={{ backgroundColor: "#161718" }}>
+      <div fluid style={{ backgroundColor: "#161718" }}>
         <div className="cont-div">
           <div className="foot-img-div">
             <img src={logo} alt="" className="imgg" />
