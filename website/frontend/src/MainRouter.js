@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./pages/Navbar";
 // import Footer from "./pages/Footer";
 import Footer from "./pages/Footer2";
@@ -14,60 +14,27 @@ import EyeSurvey from "./pages/eye_test/eyeSurvey";
 import Results from "./pages/Results";
 import LoginReq from "./pages/LoginReq";
 import firebase from "@firebase/app-compat";
-class MainRouter extends React.Component {
-  state = {
-    user: {},
-    error: null,
-    authenticated: false,
-    username: ''
-  };
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged((user)=>{
-      if(user){
-        this.setState({authenticated: true})
-        this.setState({username: firebase.auth().currentUser.displayName})
-      }
-      else{
-        this.setState({authenticated: false})
-        this.setState({username: ''})
-      }
-    })
+import { useGlobalContext } from "./reducer/context";
 
-    fetch("http://localhost:5000", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-      },
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log(response.session);
-          return response.session.user;
-        }
-      })
-      .then((responseJson) => {
-        this.setState({
-          authenticated: true,
-          user: responseJson.user,
+const MainRouter = () => {
+  const { dispatch } = useGlobalContext();
+  useEffect(() => {
+    const unSubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const { displayName, photoURL, email } = user.multiFactor.user;
+        dispatch({
+          type: "SIGN_IN_USER",
+          payload: { userName: displayName, email, profileImg: photoURL },
         });
-      })
-      .catch((error) => {
-        this.setState({
-          authenticated: false,
-          error: "Failed to authenticate user",
-        });
-      });
-  }
-  render() {
-    return (
-      <div className="inner-root">
-        <Navbar
-          authenticated={this.state.authenticated}
-          handleNotAuthenticated={this._handleNotAuthenticated}
-          username={this.state.username}
-        />
+      }
+    });
+    return () => unSubscribe();
+  }, []);
+
+  return (
+    <div className="inner-root">
+      <Navbar />
+     
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/loginreq" component={LoginReq} />
@@ -92,15 +59,11 @@ class MainRouter extends React.Component {
             component={AuralTestStart}
           />
         </Switch>
-        <ScrollToTop />
-        <Footer />
-      </div>
-    );
-  }
-
-  _handleNotAuthenticated = () => {
-    this.setState({ authenticated: false });
-  };
-}
+      
+      <ScrollToTop />
+      <Footer />
+    </div>
+  );
+};
 
 export default MainRouter;
