@@ -13,9 +13,14 @@
 .navlist-item {
     color: white;
     text-decoration: none;
+    border: none;
     font-size: 20px;
-    margin: 5px 10px;
+    margin: 0px 10px;
     background-color: black;
+}
+
+.navlist-item-link {
+    text-decoration: none;
 }
 
 .navlist-li {
@@ -25,6 +30,7 @@
 
 .navlist-li:hover {
     border-bottom: white 1px solid;
+    box-sizing: border-box;
 }
 
 .icons {
@@ -44,6 +50,7 @@
     border: 0;
     border-style: none;
     outline: none;
+    font-size: 15px;
 }
 
 .btn:hover {
@@ -54,6 +61,7 @@
     .icons {
         display: block;
     }
+
     .navlist {
         flex-direction: column;
     }
@@ -61,6 +69,7 @@
     .mob {
         display: none;
     }
+
     .active {
         position: absolute;
         z-index: 99;
@@ -73,11 +82,13 @@
         padding: 0%;
         border-top: white 1px solid;
     }
+
     .btn {
         text-align: center;
         margin: 0 auto;
     }
 }
+
 .dropdown {
     position: absolute;
     top: 58px;
@@ -89,6 +100,7 @@
     padding: 1rem;
     overflow: hidden;
 }
+
 .menu-items {
     height: 50px;
     display: flex;
@@ -97,6 +109,7 @@
     transition: 500ms background;
     padding: 0.5rem;
 }
-.menu-items:hover{
+
+.menu-items:hover {
     background-color: #525357;
 }
