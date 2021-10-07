@@ -3,7 +3,7 @@ import "../css/Navbar.css";
 import NavItems from "./NavItems";
 import logo from "../assets/blaze.png";
 import { Link } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
+
 const Navbar = () => {
   return (
     <div className="nav-container">
