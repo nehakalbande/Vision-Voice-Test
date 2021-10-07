@@ -62,7 +62,7 @@ const MainRouter = () => {
       <>
         <GlobalStyles/>
           <div className="inner-root">
-            <Navbar theme={theme} toggleTheme={themeToggler}/>
+            <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/loginreq" component={LoginReq} />
@@ -89,7 +89,7 @@ const MainRouter = () => {
             </Switch>
 
             <ScrollToTop />
-            <Footer />
+            <Footer  theme={theme} toggleTheme={themeToggler} />
           </div>
       </>
     </ThemeProvider>

@@ -9,7 +9,13 @@ const links = [
   { href: "/contact", name: "Contact us" },
 ];
 
-const Footer = () => {
+const Footer = (props) => {
+  const renderIcon = ()=>{
+    if(props.theme==="dark"){
+      return <i class="far fa-moon fa-2x" style={{color:"white"}} onClick={()=>props.toggleTheme()}></i>
+    }
+    return <i class="far fa-sun fa-2x" style={{color:"white"}} onClick={()=>props.toggleTheme()}></i>
+  }
   return (
     <footer>
       <div fluid style={{ backgroundColor: "#161718" }}>
@@ -60,6 +66,11 @@ const Footer = () => {
                 </li>
               </div>
               );
+              <div style={{ margin:"0 0 0 10px"}}>
+                <div className="icon">
+                  {renderIcon()}
+                </div>
+              </div>
             </ul>
           </div>
         </div>

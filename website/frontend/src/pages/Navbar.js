@@ -20,7 +20,7 @@ const Navbar = (props) => {
                     <span>Vision Voice</span>
                 </div>
                 </div>
-                <NavItems theme={props.theme} toggleTheme={props.toggleTheme}/>
+                <NavItems/>
             </div>
         </div>
     );

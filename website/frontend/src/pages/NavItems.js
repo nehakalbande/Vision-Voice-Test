@@ -9,13 +9,7 @@ import google from "../config/auth-method";
 import DropDownItem from "./dropdownitem";
 import { useGlobalContext } from "../reducer/context";
 
-const NavItems = (props) => {
-  const renderIcon = ()=>{
-    if(props.theme==="dark"){
-      return <i class="far fa-moon fa-2x" style={{color:"white", paddingRight:"20px"}} onClick={()=>props.toggleTheme()}></i>
-    }
-    return <i class="far fa-sun fa-2x" style={{color:"white", paddingRight:"20px"}} onClick={()=>props.toggleTheme()}></i>
-  }
+const NavItems = () => {
   const [open, setOpen] = useState(false);
   const {
     userName,
@@ -118,9 +112,6 @@ const NavItems = (props) => {
                 Login
               </button>
             )}
-          </li>
-          <li>
-            {renderIcon()}
           </li>
         </ul>
       </div>
