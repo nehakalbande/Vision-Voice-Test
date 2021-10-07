@@ -3,7 +3,7 @@ import "../css/Navbar.css";
 import NavItems from "./NavItems";
 import logo from "../assets/blaze.png";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+const Navbar = (props) => {
     
     return (
         <div className='nav-container'>
@@ -20,7 +20,7 @@ const Navbar = () => {
                     <span>Vision Voice</span>
                 </div>
                 </div>
-                <NavItems/>
+                <NavItems theme={props.theme} toggleTheme={props.toggleTheme}/>
             </div>
         </div>
     );
