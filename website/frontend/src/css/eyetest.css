@@ -51,3 +51,13 @@
     text-align: center;
     border-radius: 6px;
 }
+.start-btn:hover{
+    width: 130px;
+    background-color: #101111;
+    padding-left: 5px;
+   padding-right: 5px;
+    
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 6px;
+}
