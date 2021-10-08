@@ -12,6 +12,34 @@
 .inst-cont * {
     margin: 7px;
 }
+.carus{
+   
+   
+    height:"400px"; 
+  }
+  .carus2{
+   
+    height:"40px"; 
+  }
+
+  .carus3{
+    padding: 40px;
+    margin:0px 5px;
+    width:"800px";
+    height:"10px"; 
+  }
+
+@media only screen and (max-width: 500px) {
+    .carus{
+   
+   
+        height:"100px"; 
+      }
+      .carus2{
+       
+        height:"400px"; 
+      }
+}
 
 .start-btn{
     width: 130px;
