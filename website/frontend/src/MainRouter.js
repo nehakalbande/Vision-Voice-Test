@@ -1,7 +1,4 @@
-import React, { useEffect,useState } from "react";
-import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./pages/globalStyles";
-import { lightTheme, darkTheme } from "./pages/themes"
+import React, { useEffect } from "react";
 import { Route, Switch} from "react-router-dom";
 import Navbar from "./pages/Navbar";
 // import Footer from "./pages/Footer";
@@ -24,11 +21,7 @@ import { database } from "./config/firebase-config";
 
 const MainRouter = () => {
   const { dispatch,email } = useGlobalContext();
-  const [theme, setTheme] = useState('light');
 
-  const themeToggler = () => {
-     theme === 'light' ? setTheme('dark') : setTheme('light');
-  }
   useEffect(() => {
     const unSubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -58,41 +51,37 @@ const MainRouter = () => {
   }, [email,dispatch]);
 
   return (
-    <ThemeProvider theme={theme === 'dark' ? lightTheme : darkTheme}>
-      <>
-        <GlobalStyles/>
-          <div className="inner-root">
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/loginreq" component={LoginReq} />
-              <Route exact path="/eyetest" component={EyeTest} />
-              <Route exact path="/auraltest" component={AuralTest} />
-              <Route exact path="/results" component={Results} />
-              <Route exact path="/auraltest/aural-survey" component={AuralSurvey} />
-              <Route
-                exact
-                path="/auraltest/aural_test_start"
-                component={AuralTestStart}
-              />
-              <Route
-                exact
-                path="/eyetest/vision-test-start"
-                component={EyeTestStart}
-              />
-              <Route exact path="/eyetest/vision-survey" component={EyeSurvey} />
-              <Route
-                exact
-                path="/auraltest/aural_test_start"
-                component={AuralTestStart}
-              />
-            </Switch>
+    <div className="inner-root">
+      <Navbar />
 
-            <ScrollToTop />
-            <Footer  theme={theme} toggleTheme={themeToggler} />
-          </div>
-      </>
-    </ThemeProvider>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/loginreq" component={LoginReq} />
+        <Route exact path="/eyetest" component={EyeTest} />
+        <Route exact path="/auraltest" component={AuralTest} />
+        <Route exact path="/results" component={Results} />
+        <Route exact path="/auraltest/aural-survey" component={AuralSurvey} />
+        <Route
+          exact
+          path="/auraltest/aural_test_start"
+          component={AuralTestStart}
+        />
+        <Route
+          exact
+          path="/eyetest/vision-test-start"
+          component={EyeTestStart}
+        />
+        <Route exact path="/eyetest/vision-survey" component={EyeSurvey} />
+        <Route
+          exact
+          path="/auraltest/aural_test_start"
+          component={AuralTestStart}
+        />
+      </Switch>
+
+      <ScrollToTop />
+      <Footer />
+    </div>
   );
 };
 

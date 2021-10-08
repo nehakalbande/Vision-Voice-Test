@@ -32,6 +32,7 @@
 }
 
 .cardd1 {
+  background-color: #fff;
   height: 230px;
   width: 200px;
   padding: 3rem 1rem;
@@ -59,6 +60,7 @@
 .cardd1 .card-info1 {
   position: relative;
   z-index: 3;
+  color: black;
   opacity: 1;
   padding-top: 1em;
   padding-bottom: 1em;

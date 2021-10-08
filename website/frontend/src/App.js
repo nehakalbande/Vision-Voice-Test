@@ -4,9 +4,9 @@ import MainRouter from "./MainRouter";
 import { AppProvider } from "./reducer/context";
 const App = () => (
   <AppProvider>
-      <BrowserRouter>
-        <MainRouter />
-      </BrowserRouter>
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
   </AppProvider>
 );
 

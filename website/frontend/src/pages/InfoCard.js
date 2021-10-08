@@ -10,7 +10,7 @@ import {
 
 const InfoCard = () => {
   return (
-    <Jumbotron className="jumbo">
+    <Jumbotron style={{ backgroundColor: "#FFFFFF" }} className="jumbo">
       <Container className="container">
         <h3 style={{ textAlign: "center" }} className="h33">
           Why Vision-Voice??

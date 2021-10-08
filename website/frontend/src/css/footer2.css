@@ -47,12 +47,6 @@
   text-align: center;
 }
 
-.icon{
-  position: relative;
-  left: 10rem;
-  margin-bottom: 10px;
-}
-
 @media screen and (max-width: 500px) {
   .cont-div {
     display: flex;
