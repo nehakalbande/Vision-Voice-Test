@@ -12,10 +12,48 @@
 .inst-cont * {
     margin: 7px;
 }
+.carus{
+   
+   
+    height:"400px"; 
+  }
+  .carus2{
+   
+    height:"40px"; 
+  }
+
+  .carus3{
+    padding: 40px;
+    margin:0px 5px;
+    width:"800px";
+    height:"10px"; 
+  }
+
+@media only screen and (max-width: 500px) {
+    .carus{
+   
+   
+        height:"100px"; 
+      }
+      .carus2{
+       
+        height:"400px"; 
+      }
+}
 
 .start-btn{
     width: 130px;
     background-color: #8ab9f7;
+    padding-left: 5px;
+   padding-right: 5px;
+    
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 6px;
+}
+.start-btn:hover{
+    width: 130px;
+    background-color: #101111;
     padding-left: 5px;
    padding-right: 5px;
     
