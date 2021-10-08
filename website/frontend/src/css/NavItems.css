@@ -57,7 +57,12 @@
     border: 0;
 }
 
-@media screen and (max-width: 768px) {
+.authorized-items {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1060px) {
     .icons {
         display: block;
     }
@@ -86,6 +91,11 @@
     .btn {
         text-align: center;
         margin: 0 auto;
+    }
+
+    .authorized-items {
+        display: flex;
+        flex-direction: column;
     }
 }
 

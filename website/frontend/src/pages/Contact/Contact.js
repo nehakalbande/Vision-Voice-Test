@@ -23,7 +23,7 @@
 
 import React from "react";
 import {Link} from 'react-router-dom';
-import Style from "style-it";
+// import Style from "style-it";
 import"./Contact.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEnvelopeOpen, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons'
