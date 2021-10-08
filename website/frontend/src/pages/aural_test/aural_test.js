@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../css/aural_test.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+ 
 
 const AuralTest = (props) => {
     useEffect(() => {
@@ -8,6 +11,35 @@ const AuralTest = (props) => {
     });
     return (
         <div className='instt-cont'>
+            <div className="carus2">
+            <Carousel showArrows={false}infiniteLoop={true}
+        showThumbs={false}
+        showStatus={false}
+        autoPlay={true}
+        interval={2000}>
+          
+                <div className="carus">
+                    <img src="https://images.unsplash.com/photo-1514885073919-368d69513883?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"  />
+                   
+                </div>
+                <div className="carus">
+                    <img src="https://images.unsplash.com/photo-1596088728260-08a654466a00?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"  />
+                   
+                </div>
+                <div className="carus">
+                    <img src="https://images.unsplash.com/photo-1626208763281-e03339e47442?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=858&q=80" />
+                    
+                </div>
+                <div className="carus">
+                    <img src="https://images.unsplash.com/photo-1519583916722-289d542b19a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" />
+                    
+                </div>
+              
+            </Carousel>
+        </div>
+
+
+
             <h2 style={{ textAlign: "center" }}> Instructions</h2>
             <h4 style={{ textAlign: "center" }}>
                 We will be taking the test in 3 parts:
