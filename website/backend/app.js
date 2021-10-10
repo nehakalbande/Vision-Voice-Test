@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 import mongoose from "mongoose"
-import admin from "./config/firebase-admin-config.js";
+// import admin from "./config/firebase-admin-config.js";
 import cors from "cors";
 import bodyParser from 'body-parser';
 
