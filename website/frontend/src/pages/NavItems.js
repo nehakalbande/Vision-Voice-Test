@@ -8,19 +8,45 @@ import firebase from "../config/firebase-config";
 import google from "../config/auth-method";
 import DropDownItem from "./dropdownitem";
 import { useGlobalContext } from "../reducer/context";
-
+import axios from "axios";
+import jQuery from 'jquery';
 const NavItems = () => {
   const [open, setOpen] = useState(false);
-  const { userName, authenticated, dispatch, isDropDownOpen } =
-    useGlobalContext();
+  const { userName, authenticated, dispatch, isDropDownOpen } = useGlobalContext();
+  const getCookie = (name) => {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
   const _handleSignInClick = () => {
     firebase
       .auth()
       .signInWithPopup(google)
-      .then((result) => {
+      .then( (result) => {
+        console.log("Logged in!");
+        result.user.getIdToken().then((idToken)=>{
+          console.log(idToken);
+          const csrfToken = getCookie('csrftoken');
+          const data = {
+            token: idToken,
+            csrfToken: csrfToken
+          }
+          axios.post( 'http://localhost:5000/sessionLogin', data).catch((err)=>{
+            console.log(err);
+          })
+        })
         const token = result.credential.accessToken;
         const { email, given_name, picture } =
-          result.additionalUserInfo.profile;
+        result.additionalUserInfo.profile;
         dispatch({
           type: "SIGN_IN_USER",
           payload: { userName: given_name, email, profileImg: picture },
@@ -37,6 +63,10 @@ const NavItems = () => {
       .then(() => {
         dispatch({ type: "SIGN_OUT_USER" });
         console.log("Logged out!");
+        axios.post( 'http://localhost:5000/sessionLogout').catch((err)=>{
+            console.log(err);
+        })
+
       })
       .catch((err) => {
         console.log(err);
