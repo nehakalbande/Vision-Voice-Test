@@ -33,7 +33,7 @@ If you have something awesome to contribute, this is how you do it.
 - Install the Project Dependencies
   - `npm install`
 - Run Node Server
-  - `node app.js`
+  - `npm start`
 - Local Host
   - `http://localhost:5000/`
 

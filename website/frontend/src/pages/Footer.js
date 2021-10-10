@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/footer.css";
 import logo from "../assets/blaze.png";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer>
@@ -12,13 +12,13 @@ const Footer = () => {
                             <div className='coll'>
                                 <img src={logo} alt='' className='imgg' />
                             </div>
-                            <div className='coll'>
+                            <div className='coll' >
                                 <h2> Links:</h2>
                                 <ul>
                                     <li>
-                                        <a target={"_blank"} href='/eyetest' style={{ color: "white" }}>
+                                        <Link target={"_blank"} to='/eyetest' style={{ color: "white" }}>
                                             Vision Test
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
                                         <a target={"_blank"} href='' style={{ color: "white" }}>
