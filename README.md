@@ -12,6 +12,7 @@ Hearing Test determines how well you can hear at different frequency levels and 
 
 </div>
 
+---
 
 **We are currently working on making a website for the repository. Go through the documentation, issues and [Contributing](#Contributing) to learn more about how you can contribute!**
 
