@@ -32,6 +32,15 @@ If you have something awesome to contribute, this is how you do it.
   - `cd backend`
 - Install the Project Dependencies
   - `npm install`
+- Make your own firebase project
+  - Go to Project Settings
+  - ![image](https://user-images.githubusercontent.com/72353221/137525898-e9266b08-a4f9-4e90-bc55-717286d056ec.png)
+  - Go to Service accounts section, create a new service account and click on "Generate new private key" 
+  - ![image](https://user-images.githubusercontent.com/72353221/137526093-63386f87-f239-4e52-9f77-16cccc81d90d.png)
+- Copy & paste the private key
+  - Copy and paste private key (a JSON object) in website/backend/config/adminkey.js without double inverted commas;
+    - `const api_key = "YOUR_PRIVATE_KEY_HERE";` 
+  - Save the changes
 - Run Node Server
   - `npm start`
 - Local Host
