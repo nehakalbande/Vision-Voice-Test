@@ -22,6 +22,24 @@
     /* border: 1px solid black; */
 }
 
+.result-page {
+    margin: 5%;
+}
+
+table {
+    width: 80%;
+    table-layout: fixed;
+    text-align: center;
+    margin: 0 auto;
+}
+tr {
+    width: 33%;
+}
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
 @media screen and (max-width: 500px) {
     .out-res {
         min-height: 53vh;
