@@ -1,18 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { database } from "../../config/firebase-config";
+import { useGlobalContext } from "../../reducer/context";
 
 const AuralTestResult = (props) => {
     useEffect(() => {
         document.title = "Aural Test Result";
+        fetchResult()
     });
+
+    const [state, setState] = useState({ age: "", gender: "", date: "", leftNo: "", rightNo: "" });
+
+    const { email, userName } = useGlobalContext();
+
+    const fetchResult = async() => {
+        if(email && state.gender === "") {
+            const prevInstance = doc(database, "users", email);
+            const docSnap = await getDoc(prevInstance);
+            
+            let docData = docSnap.data();
+            console.log(docData);
+            let age = docData.age;
+            let gender = docData.auralTestResults[0].Gender;
+            let date = docData.auralTestResults[0].createdAt;
+            let result = docData.auralTestResults[0].Result;
+            let leftNo = "";
+            let rightNo = "";
+            
+            for(let i=0;i<result.length;i++) {
+                let obj = docData.auralTestResults[0].Result[i];
+                if (obj.q === "Do people complain that you have the TV or radio too loud ?") {
+                    leftNo = obj.a;
+                }
+                if (obj.q === "Was this tone clearly audible to you ?") {
+                    rightNo = obj.a;
+                } 
+            }
+            setState({age, gender, date, leftNo, rightNo})
+        }
+    }
+
     return (
         <div className="result-page">
             <div style={{width: "70%", margin: "0 auto", lineHeight: "1.5x"}}>
                 <h2 style={{textAlign: "center"}}>Report</h2>
                 <div style={{marginTop: "50px"}}>
-                    <h3 style={{textAlign: "justify", textAlignLast: "right"}}>Date:</h3>
-                    <h3>Name:</h3>
-                    <h3>Age:</h3>
-                    <h3>Gender:</h3>
+                    <h3 style={{textAlign: "justify", textAlignLast: "right"}}>Date: { state.date }</h3>
+                    <h3>Name: { userName }</h3>
+                    <h3>Age: { state.age } </h3>
+                    <h3>Gender: { state.gender }</h3>
                     <h3>History (If any):</h3>
                     <h3>Tone Test Results:</h3>
                     <table>
