@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./pages/Navbar";
 // import Footer from "./pages/Footer";
 import Footer from "./pages/Footer2";
@@ -18,6 +18,8 @@ import firebase from "@firebase/app-compat";
 import { useGlobalContext } from "./reducer/context";
 import { doc,onSnapshot } from "firebase/firestore";
 import { database } from "./config/firebase-config";
+import VisionTestResult from "./pages/results/visionTestResult";
+import AuralTestResult from "./pages/results/auralTestResult";
 
 const MainRouter = () => {
   const { dispatch,email } = useGlobalContext();
@@ -77,6 +79,9 @@ const MainRouter = () => {
           path="/auraltest/aural_test_start"
           component={AuralTestStart}
         />
+        <Route exact path="/vision-test/pdf" component={VisionTestResult} />
+        <Route exact path="/aural-test/pdf" component={AuralTestResult} />
+        <Redirect to="/" />
       </Switch>
 
       <ScrollToTop />
