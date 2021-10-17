@@ -1,20 +1,56 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { database } from "../../config/firebase-config";
+import { useGlobalContext } from "../../reducer/context";
+
 
 const VisionTestResult = (props) => {
     useEffect(() => {
         document.title = "Vision Test Result";
+        fetchResult()
     });
+
+    const [state, setState] = useState({ age: "", gender: "", date: "", leftNo: "", rightNo: "" });
+
+    const { email, userName } = useGlobalContext();
+    const fetchResult = async() => {
+        if(email && state.gender === "") {
+            const prevInstance = doc(database, "users", email);
+            const docSnap = await getDoc(prevInstance);
+            
+            let docData = docSnap.data();
+
+            let age = docData.age;
+            let gender = docData.visionTestResults[0].Gender;
+            let date = docData.visionTestResults[0].createdAt;
+            let result = docData.visionTestResults[0].Result;
+            let leftNo = "";
+            let rightNo = "";
+            
+            for(let i=0;i<result.length;i++) {
+                let obj = docData.visionTestResults[0].Result[i];
+                if (obj.q === "Left Eye") {
+                    leftNo = obj.a;
+                }
+                if (obj.q === "Right Eye") {
+                    rightNo = obj.a;
+                } 
+            }
+            setState({age, gender, date, leftNo, rightNo})
+        }
+    }
+
     return (
         <div className="result-page">
             <div style={{width: "70%", margin: "0 auto", lineHeight: "1.5x"}}>
                 <h2 style={{textAlign: "center"}}>Report</h2>
                 <div style={{marginTop: "50px"}}>
                     <h3 style={{textAlign: "justify", textAlignLast: "right"}}>
-                        Date:
+                        Date: { state.date }
                     </h3>
-                    <h3>Name:</h3>
-                    <h3>Age:</h3>
-                    <h3>Gender:</h3>
+                    <h3>Name: { userName }</h3>
+                    <h3>Age: { state.age }</h3>
+                    <h3>Gender: { state.gender }</h3>
                     <h3>History (If diabetic or visually impared):</h3>
                     <hr />
                     <h3>Visual acuity (VA):</h3>
@@ -26,8 +62,8 @@ const VisionTestResult = (props) => {
                         </tr>
                         <tr>
                             <td>Line till which able to see</td>
-                            <td>Line no</td>
-                            <td>Line no</td>
+                            <td>{ state.leftNo }</td>
+                            <td>{ state.rightNo }</td>
                         </tr>
                         <tr>
                             <td>Eye Sight</td>
