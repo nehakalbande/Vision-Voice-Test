@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { database } from "../../config/firebase-config";
 import { useGlobalContext } from "../../reducer/context";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 const AuralTestResult = (props) => {
     useEffect(() => {
@@ -37,11 +39,24 @@ const AuralTestResult = (props) => {
                 } 
             }
             setState({age, gender, date, leftNo, rightNo})
+            print()
         }
     }
 
+    const print = () => {
+        html2canvas(document.querySelector("#aural-doc")).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF("l","pt","a4");
+            const offset = 80;
+            var width = pdf.internal.pageSize.getWidth();
+            var height = pdf.internal.pageSize.getHeight();
+            pdf.addImage(imgData, 'PNG', -offset, 0, width + offset+20, height);
+            pdf.save("auralTestResult.pdf"); 
+        });
+      };
+
     return (
-        <div className="result-page">
+        <div className="result-page" id="aural-doc">
             <div style={{width: "70%", margin: "0 auto", lineHeight: "1.5x"}}>
                 <h2 style={{textAlign: "center"}}>Report</h2>
                 <div style={{marginTop: "50px"}}>
