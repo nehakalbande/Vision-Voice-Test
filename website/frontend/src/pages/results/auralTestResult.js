@@ -39,10 +39,23 @@ const AuralTestResult = (props) => {
                 } 
             }
             setState({age, gender, date, leftNo, rightNo})
+            print()
         }
     }
 
-    const JSX= (
+    const print = () => {
+        html2canvas(document.querySelector("#aural-doc")).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF("l","pt","a4");
+            const offset = 80;
+            var width = pdf.internal.pageSize.getWidth();
+            var height = pdf.internal.pageSize.getHeight();
+            pdf.addImage(imgData, 'PNG', -offset, 0, width + offset+20, height);
+            pdf.save("auralTestResult.pdf"); 
+        });
+      };
+
+    return (
         <div className="result-page" id="aural-doc">
             <div style={{width: "70%", margin: "0 auto", lineHeight: "1.5x"}}>
                 <h2 style={{textAlign: "center"}}>Report</h2>
@@ -127,20 +140,6 @@ const AuralTestResult = (props) => {
             </div>
         </div>
     );
-
-    const print = () => {
-        html2canvas(document.querySelector("#aural-doc")).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF("l","pt","a4");
-            const offset = 80;
-            var width = pdf.internal.pageSize.getWidth();
-            var height = pdf.internal.pageSize.getHeight();
-            pdf.addImage(imgData, 'PNG', -offset, 0, width + offset+20, height);
-            pdf.save("auralTestResult.pdf"); 
-        });
-      };
-
-    return (<div>{JSX} <button onClick={print}>Save as PDF</button></div>);
 }
 
 export default AuralTestResult;
