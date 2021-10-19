@@ -37,28 +37,11 @@ const MainRouter = () => {
     return () => unSubscribe();
   }, [dispatch]);
 
-
-  useEffect(() => {
-    if (email) {
-      const unsubscribe = onSnapshot(doc(database, "users", email), (doc) => {
-        if(!doc.data())return;
-        const { auralTestResults, visionTestResults } = doc?.data();
-        dispatch({
-          type: "SET_PREVIOUS_TESTS_DATA",
-          payload: { auralTestResults, visionTestResults },
-        });
-      });
-      return () => unsubscribe();
-    }
-  }, [email,dispatch]);
-
-  return (
-    <div className="inner-root">
-      <Navbar />
-
+  let routes;
+  if (email) {
+    routes = (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/loginreq" component={LoginReq} />
         <Route exact path="/eyetest" component={EyeTest} />
         <Route exact path="/auraltest" component={AuralTest} />
         <Route exact path="/results" component={Results} />
@@ -83,7 +66,40 @@ const MainRouter = () => {
         <Route exact path="/aural-test/pdf" component={AuralTestResult} />
         <Redirect to="/" />
       </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/loginreq" component={LoginReq} />
+        <Route exact path="/eyetest" component={EyeTest} />
+        <Route exact path="/auraltest" component={AuralTest} />
+        <Route exact path="/vision-test/pdf" component={VisionTestResult} />
+        <Route exact path="/aural-test/pdf" component={AuralTestResult} />
+        <Redirect to="/" />
+      </Switch>
+    );
+  }
+  
+  useEffect(() => {
+    if (email) {
+      const unsubscribe = onSnapshot(doc(database, "users", email), (doc) => {
+        if(!doc.data()) return;
+        const { auralTestResults, visionTestResults } = doc?.data();
+        dispatch({
+          type: "SET_PREVIOUS_TESTS_DATA",
+          payload: { auralTestResults, visionTestResults },
+        });
+      });
+      return () => unsubscribe();
+    }
+    
+  }, [email,dispatch]);
 
+  return (
+    <div className="inner-root">
+      <Navbar />
+      {routes}
       <ScrollToTop />
       <Footer />
     </div>

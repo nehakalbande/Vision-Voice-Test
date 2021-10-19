@@ -66,6 +66,7 @@ button {
     font-size: medium;
     margin: 10px auto;
     text-align: center;
+    cursor: pointer;
     /* border: 1px black solid; */
 }
 .row {
