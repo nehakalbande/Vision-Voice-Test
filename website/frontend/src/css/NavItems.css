@@ -68,6 +68,8 @@
     }
 
     .navlist {
+        border:none;
+        margin-top: -25px;
         flex-direction: column;
     }
 
@@ -85,7 +87,6 @@
         justify-content: center;
         text-align: center;
         padding: 0%;
-        border-top: white 1px solid;
     }
 
     .btn {
@@ -118,6 +119,11 @@
     border-radius: 8px;
     transition: 500ms background;
     padding: 0.5rem;
+
+}
+.navlist-li:hover{
+    border-bottom: none;
+    outline: none;
 }
 
 .menu-items:hover {
