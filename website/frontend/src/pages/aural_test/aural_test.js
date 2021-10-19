@@ -3,12 +3,25 @@ import { Link } from "react-router-dom";
 import "../../css/aural_test.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
- 
+import { useHistory } from "react-router";
+import { useGlobalContext } from "../../reducer/context";
 
 const AuralTest = (props) => {
+    const history = useHistory();
+    const { email } = useGlobalContext();
+
+    const handleStartTest = (e) => {
+        e.preventDefault();
+        if (!email) {
+        history.push("/loginreq");
+        return;
+        }
+        history.push("/auraltest/aural-survey");
+    }
     useEffect(() => {
         document.title = "Aural Test ";
     });
+    
     return (
         <div className='instt-cont'>
             <div className="carus2">
@@ -86,14 +99,14 @@ const AuralTest = (props) => {
             <div className='row'>
                 <div className='redirect-btn btn-btn'>
                     {" "}
-                    <Link to='/auraltest/aural-survey' className='red-link'>
+                    <div onClick={handleStartTest} className='red-link'>
                         I AM USING HEADPHONES
-                    </Link>
+                    </div>
                 </div>
                 <div className='redirect-btn btn-btn'>
-                    <Link to='/auraltest/aural-survey' className='red-link'>
+                    <div onClick={handleStartTest} className='red-link'>
                         I AM USING SPEAKERS
-                    </Link>
+                    </div>
                 </div>
             </div>
         </div>

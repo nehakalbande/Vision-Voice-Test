@@ -4,10 +4,10 @@
     min-height: 53vh;
 }
 
-.red-link {
+/* .red-link {
     text-decoration: none;
     color: black;
-}
+} */
 
 .inst-cont * {
     margin: 7px;
@@ -60,4 +60,6 @@
     margin: 0 auto;
     text-align: center;
     border-radius: 6px;
+    cursor: pointer;
+    color: white;
 }

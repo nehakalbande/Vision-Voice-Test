@@ -10,6 +10,7 @@ import DropDownItem from "./dropdownitem";
 import { useGlobalContext } from "../reducer/context";
 import axios from "axios";
 import jQuery from 'jquery';
+
 const NavItems = () => {
   const [open, setOpen] = useState(false);
   const { userName, authenticated, dispatch, isDropDownOpen } = useGlobalContext();
@@ -99,16 +100,21 @@ const NavItems = () => {
               Aural Test
             </Link>
           </li>
-          <li className="navlist-li ">
-            <Link to="/results" className="navlist-item disabled">
-              Get Results
-            </Link>
-          </li>
+
+          {authenticated && (
+            <li className="navlist-li ">
+              <Link to="/results" className="navlist-item disabled">
+                Get Results
+              </Link>
+            </li>
+          )}
+          
           <li className="navlist-li ">
             <a href="/contact" target={"_blank"} className="navlist-item">
               Contact Us
             </a>
           </li>
+
           {authenticated ? (
             <div className="authorized-items">
               <li className="navlist-li">
