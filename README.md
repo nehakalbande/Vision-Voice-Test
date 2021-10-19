@@ -75,15 +75,15 @@ Once you visited our website, you can go through other websites for free checkup
 ---
 ## <div align="center">Articles and Blogs</div>
 
-##### 1. Why you need an eye exam even if you dont need glasses: [Sight Eye Clinic](https://sighteyeclinic.com/why-you-need-an-eye-exam-even-if-you-dont-need-glasses/)
-##### 2. Artificial Intelligence In HealthCare : [HealthCare](https://www.brookings.edu/research/risks-and-remedies-for-artificial-intelligence-in-health-care/) 
+##### 1. Why you need an eye exam even if you dont need glasses [Sight Eye Clinic](https://sighteyeclinic.com/why-you-need-an-eye-exam-even-if-you-dont-need-glasses/)
+##### 2. Artificial Intelligence In HealthCare  [HealthCare](https://www.brookings.edu/research/risks-and-remedies-for-artificial-intelligence-in-health-care/) 
 ##### 3. Top 10 foods for healthy eyes [Medical News Today](https://www.medicalnewstoday.com/articles/321226)
 ##### 4. Ear Care Tips [clevelandclinic](https://my.clevelandclinic.org/health/articles/13076-ear-care-tips)
 ##### 5. How to clean your ears [Medical News Today](https://www.medicalnewstoday.com/articles/323024#how-to-clean-your-ears) 
 ##### 6. Healthcare [Journal](https://www.mdpi.com/journal/healthcare)
 ##### 7. 8 Nutrients That Will Optimize Your Eye Health [Healthline](https://www.healthline.com/nutrition/8-nutrients-for-eyes)
 ##### 8. Hearing Aids [nidcd](https://www.nidcd.nih.gov/health/hearing-aids)
-##### 9. Machine Learning in Healthcare: A Review [IEEE Xplore](https://ieeexplore.ieee.org/document/8474918)
+##### 9. Machine Learning in Healthcare A Review [IEEE Xplore](https://ieeexplore.ieee.org/document/8474918)
 ##### 10. Do you know these surprising health facts? [spectrumhealthcare](https://spectrumhealthcare.com/resources/do-you-know-these-surprising-health-facts/)
 
 ---
